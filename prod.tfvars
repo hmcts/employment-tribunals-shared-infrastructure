@@ -1,1 +1,1 @@
-"db_storage_mb" = "20480"
+db_storage_mb = "20480"
