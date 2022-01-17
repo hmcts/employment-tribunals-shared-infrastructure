@@ -1,0 +1,9 @@
+#!groovy
+//noinspection GroovyUnusedAssignment
+@Library("Infrastructure") _
+
+def product = "employment-tribunals"
+
+withInfraPipeline(product) {
+}
+
