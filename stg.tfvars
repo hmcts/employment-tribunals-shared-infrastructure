@@ -1,1 +1,1 @@
-key_vault_prefix = "emptribunals"
+key_vault_prefix = "emp-tribunals"
