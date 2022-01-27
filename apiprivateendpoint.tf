@@ -1,18 +1,18 @@
 resource "azurerm_resource_group" "apipetrg" {
   provider = "azurerm.pet-aks"
-  name     = "${var.product}-api-${var.petenv}-endpoint-rg"
+  name     = "${var.product}-api-${local.petenv}-endpoint-rg"
   location = var.location
 
 }
 resource "azurerm_private_endpoint" "apipetpostgres" {
   provider            = "azurerm.pet-aks"
-  name                = "${var.product}-api-${var.petenv}-endpoint"
+  name                = "${var.product}-api-${local.petenv}-endpoint"
   location            = var.location
   resource_group_name = azurerm_resource_group.apipetrg.name
   subnet_id           = data.azurerm_subnet.petpostgres.id
 
   private_service_connection {
-    name                           = "${var.product}-api-${var.petenv}-postgressdb"
+    name                           = "${var.product}-api-${local.petenv}-postgressdb"
     private_connection_resource_id = module.et-api-database.id
     subresource_names              = ["postgresqlServer"]
     is_manual_connection           = false
