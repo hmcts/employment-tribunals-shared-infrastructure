@@ -9,5 +9,5 @@ locals {
   petenv = var.env == "demo" ? "dev" : var.env
 }
 output "petnetwork" {
-  value = ""pet_${local.petenv}_network""
+  value = "pet_${local.petenv}_network"
 }
