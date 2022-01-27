@@ -1,5 +1,5 @@
 module "et1-database" {
-  source                = "git@github.com:hmcts/cnp-module-postgres?ref=postgresql_tf"
+  source                = "git@github.com:hmcts/cnp-module-postgres?ref=pet-disable-dns-setting"
   product               = var.product
   component             = "et1"
   location              = var.location
@@ -16,7 +16,7 @@ module "et1-database" {
   subnet_id             = data.azurerm_subnet.postgres.id
 }
 module "et3-database" {
-  source                = "git@github.com:hmcts/cnp-module-postgres?ref=postgresql_tf"
+  source                = "git@github.com:hmcts/cnp-module-postgres?ref=pet-disable-dns-setting"
   product               = var.product
   component             = "et3"
   location              = var.location
@@ -33,7 +33,7 @@ module "et3-database" {
   subnet_id             = data.azurerm_subnet.postgres.id
 }
 module "et-api-database" {
-  source                = "git@github.com:hmcts/cnp-module-postgres?ref=postgresql_tf"
+  source                = "git@github.com:hmcts/cnp-module-postgres?ref=pet-disable-dns-setting"
   product               = var.product
   component             = "api"
   location              = var.location
