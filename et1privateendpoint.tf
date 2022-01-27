@@ -10,7 +10,7 @@ resource "azurerm_private_endpoint" "et1petpostgres" {
   provider            = "azurerm.pet-aks"
   name                = "${var.product}-et1-${var.env}-endpoint"
   location            = var.location
-  resource_group_name = azurerm_resource_group.petrg.name
+  resource_group_name = azurerm_resource_group.et1petrg.name
   subnet_id           = data.azurerm_subnet.petpostgres.id
 
   private_service_connection {
