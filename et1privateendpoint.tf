@@ -1,5 +1,3 @@
-
-
 resource "azurerm_resource_group" "et1petrg" {
   provider = "azurerm.pet-aks"
   name     = "${var.product}-et1-${var.env}-endpoint-rg"
