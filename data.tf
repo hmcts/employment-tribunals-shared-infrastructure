@@ -6,7 +6,7 @@ data "azurerm_subnet" "petpostgres" {
 }
 
 locals {
-  petenv = var.env == "demo" ? "dev" : var.env
+  petenv = var.env == "prod" || var.env == "stg" ? var.env : "dev"
 }
 output "petnetwork" {
   value = "pet_${local.petenv}_network"
