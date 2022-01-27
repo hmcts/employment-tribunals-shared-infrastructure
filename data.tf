@@ -4,3 +4,7 @@ data "azurerm_subnet" "petpostgres" {
   virtual_network_name = "pet_${var.petenv}_network"
   resource_group_name  = "pet_${var.petenv}_network_resource_group"
 }
+
+output "petenv" {
+  value = "pet_${var.petenv}_network"
+}
